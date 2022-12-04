@@ -68,18 +68,13 @@ h2 {
   background-color: #54c242;
   color: white;
   cursor: pointer;
-  padding: 0.5rem 0.3rem;
-  border-radius: 5% 0% 0% 5%;
 }
 
 #addIcon {
-  font-size: 0.5rem;
-  font-weight: 100;
   background-color: #54c242;
   color: white;
   cursor: pointer;
-  padding: 0.5rem 0.2rem;
-  border-radius: 0% 5% 5% 0%;
+  font-size: inherit;
 }
 .submitSection {
   margin-top: 2rem;
@@ -87,6 +82,13 @@ h2 {
 .submitButton {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  border: 0;
+  font-size: 0.5rem;
+  gap: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 ::-webkit-input-placeholder {

@@ -27,8 +27,6 @@ window.addEventListener("load", () => {
       quest: event.target.elements.quest.value,
       dueDate: event.target.elements.dueDate.value,
       taskTag: event.target.elements.taskTag.value,
-      // taskColor: event.target.elements.taskColor.value,
-      // notes: event.target.elements.notes.value,
       done: false,
       createdAt: new Date().getTime(),
     };
