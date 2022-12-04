@@ -80,6 +80,7 @@ function DisplayQuests() {
 
     actions.classList.add("actions");
     edit.classList.add("edit");
+    edit.setAttribute("data-is-editing", false);
     deleteButton.classList.add("delete");
 
     quest.innerHTML = `<input type="text" value="${todo.quest}" readonly>`;
@@ -98,8 +99,6 @@ function DisplayQuests() {
     todoItem.appendChild(quest);
     todoItem.appendChild(dueDate);
     todoItem.appendChild(taskTag);
-    //   todoItem.appendChild(notes);
-    //   todoItem.appendChild(modal);
     todoItem.appendChild(actions);
 
     questList.appendChild(todoItem);
@@ -126,33 +125,28 @@ function DisplayQuests() {
       const dateInput = dueDate.querySelector("input");
       const tagInput = taskTag.querySelector("input");
 
-      questInput.removeAttribute("readonly");
-      // questInput.focus();
-      dateInput.removeAttribute("readonly");
-      // dateInput.focus();
-      tagInput.removeAttribute("readonly");
-      // tagInput.focus();
+      const isEdit = edit.getAttribute("data-is-editing");
 
-      questInput.addEventListener("blur", (event) => {
-        questInput.setAttribute("readonly", true);
-        todo.quest = event.target.value;
-        localStorage.setItem("todos", JSON.stringify(todos));
-        DisplayQuests();
-      });
+      if (isEdit === "false") {
+        event.target.innerHTML = "Save";
 
-      dateInput.addEventListener("blur", (event) => {
-        dateInput.setAttribute("readonly", true);
-        todo.dueDate = event.target.value;
-        localStorage.setItem("todos", JSON.stringify(todos));
-        DisplayQuests();
-      });
+        questInput.removeAttribute("readonly");
+        dateInput.removeAttribute("readonly");
+        tagInput.removeAttribute("readonly");
 
-      tagInput.addEventListener("blur", (event) => {
-        tagInput.setAttribute("readonly", true);
-        todo.taskTag = event.target.value;
+        questInput.focus();
+
+        edit.setAttribute("data-is-editing", "true");
+      } else {
+        event.target.innerHTML = "Edit";
+        edit.setAttribute("data-is-editing", "false");
+
+        todo.quest = questInput.value;
+        todo.dueDate = dateInput.value;
+        todo.taskTag = tagInput.value;
+
         localStorage.setItem("todos", JSON.stringify(todos));
-        DisplayQuests();
-      });
+      }
     });
 
     deleteButton.addEventListener("click", (event) => {
