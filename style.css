@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  outline: none;
+  /* font-size: 0.95rem; */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.app {
+  width: 100%;
+  padding: 2rem 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.greeting {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input--name {
+  color: #313154;
+  font-size: 2rem;
+  font-weight: 700;
+  max-width: 180px;
+  text-align: left;
+  padding-left: .5rem;
+}
+
+.greeting .title input {
+  margin-left: 0.5rem;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.greeting .title,
+.greeting .title input {
+  color: #313154;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.create-task .add-task {
+  font-size: 1.3rem;
+  font-weight: 400;
+  background-color: #54c242;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 0.3rem;
+  border-radius: 5% 0% 0% 5%;
+}
+
+#addIcon {
+  font-size: 0.5rem;
+  font-weight: 100;
+  background-color: #54c242;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 0.2rem;
+  border-radius: 0% 5% 5% 0%;
+}
+.submitSection {
+  margin-top: 2rem;
+}
+.submitButton {
+  display: flex;
+  justify-content: center;
+}
+
+::-webkit-input-placeholder {
+  border-style: none;
+}
+#list-name {
+  height: 3rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+#questsListTitle {
+  height: 3rem;
+  /* margin-top: 1rem; */
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.task-name,
+.due-date,
+.task-tag {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.new-task-list {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.create-task .task-titles {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 2.5rem;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.create-task .new-task-list {
+  margin-top: 5px;
+  padding: 0.5rem 0.5rem;
+}
+
+.create-task .list {
+  display: flex;
+}
+
+.create-task .todo-task {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 4rem;
+  /* margin-left: 1rem; */
+}
+
+.create-task .task {
+  display: flex;
+}
+
+/* ----------------------- */
+/* NOTES MODAL */
+
+.create-task .notes {
+  color: white;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  background: url(https://gal.proto.io/assets/f1352389411295/b4d38937253ae016b12a817130aa6893.svg);
+  background-size: 1.7rem;
+  background-repeat: no-repeat;
+  border-style: none;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: black;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: rgb(80, 78, 78);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+::-webkit-resizer {
+  display: none;
+}
+
+.notes-title {
+  font-size: 40px;
+}
+
+#notes-description {
+  margin-top: 1.5rem;
+  width: 100%;
+  border-style: none;
+  font-size: 20px;
+  text-align: left;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 1);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+/* --------------------------- */
+/* Dropdown CSS Properties */
+
+.dropbtn {
+  color: white;
+  padding: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  background: url(https://gal.proto.io/generated/185f3be0c18a065efec6e893e0a6ce94_6c7075.svg);
+  background-repeat: no-repeat;
+  border-style: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: whitesmoke;
+  min-width: 100px;
+  z-index: 1;
+  margin-top: 3rem;
+  margin-left: 5rem;
+  border-radius: 5px;
+}
+
+.dropdownContent option {
+  color: black;
+  font-family: helvetica;
+  padding: 5px 5px;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.quest-list .list {
+  margin: 1rem 0;
+}
+
+.quest-list .todo-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 6px black;
+  margin-bottom: 1rem;
+}
+
+.todo-item label {
+  display: block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.todo-item .todo-quest {
+  flex: 1 1 0%;
+}
+
+.todo-item .todo-quest input {
+  color: #313154;
+  /* font-size: 1.125rem; */
+  font-size: 1.25rem;
+}
+
+.todo-item .actions {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item .actions button {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.todo-items .actions button:hover {
+  opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+  margin-right: 0.5rem;
+  background-color: var(--primary);
+}
+
+.todo-item .actions .delete {
+  background-color: var(--danger);
+}
+
+.todo-item.done .todo-quest input {
+  text-decoration: line-through;
+  color: #888;
+}

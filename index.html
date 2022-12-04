@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quest Log</title>
+  </head>
+
+  <body>
+    <main class="app">
+      <section class="header">
+          <div class="greeting">
+            <h2 id="time"></h2>
+            <input class="input--name" type="text" id="name" placeholder="Name here" />
+          </div>
+        <h2>Quest Log</h2>
+      </section>
+
+      <hr />
+      <hr />
+
+      <input type="text" id="list-name" placeholder="Your list name" />
+
+      <!-- Line Breaks -->
+      <br />
+      <br />
+      <br />
+      <br />
+      <!-- Line Breaks -->
+
+      <section class="create-task" id="create-task">
+
+        <section class="task-titles">
+          <p3>Quest Name</p3>
+          <p3>Due Date</p3>
+          <p3>Tag</p3>
+        </section>
+
+        <form id="quest">
+          <section class="new-task-list" id="new-task-list">
+            <div class="list">
+              <div class="todo-task">
+
+                <input
+                  type="text"
+                  name="quest"
+                  class="task-name"
+                  placeholder="Quest Name"
+                />
+
+                <input
+                  type="text"
+                  name="dueDate"
+                  class="due-date"
+                  placeholder="Due Date"
+                />
+
+                <input
+                  type="text"
+                  name="taskTag"
+                  class="task-tag"
+                  placeholder="Quest Tag"
+                />
+
+              </div>
+            </div>
+          </section>
+          <div class="submitSection">
+            <div class="submitButton">
+              <input type="submit" value="Add Quest" class="add-task" />
+              <img
+                id="addIcon"
+                src="https://gal.proto.io/generated/5471a6d504bdd63a54021cd578083f50_ffffff.svg"
+              />
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Line Breaks -->
+      <br />
+      <br />
+      <hr>
+      <hr>
+      <br />
+      <!-- Line Breaks -->
+
+      <section class="quest-list">
+        <h3 id="questsListTitle">Quests</h3>
+        <div class="list" id="quest-list">
+          <!-- <div class="todo-item">
+            <label>
+              <input type="checkbox" />
+              <span class="bubble school"></span>
+            </label>
+
+            <div class="todo-quest">
+              <input type="text" value="Make a video" readdonly />
+            </div>
+
+            <div class="actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+
+          <div class="todo-item">
+            <label>
+              <input type="checkbox" />
+              <span class="bubble personal"></span>
+            </label>
+
+            <div class="todo-quest">
+              <input type="text" value="Get milk" readdonly />
+            </div>
+
+            <div class="actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+    <script>
+      const time = new Date().getHours();
+      let greeting;
+      if (time < 10) {
+        greeting = "Good morning,";
+      } else if (time < 20) {
+        greeting = "Good day,";
+      } else {
+        greeting = "Good evening,";
+      }
+      document.getElementById("time").innerHTML = greeting;
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
