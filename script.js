@@ -84,7 +84,6 @@ function DisplayQuests() {
     quest.innerHTML = `<input type="text" value="${todo.quest}" readonly>`;
     dueDate.innerHTML = `<input type="text" value="${todo.dueDate}" readonly>`;
     taskTag.innerHTML = `<input type="text" value="${todo.taskTag}" readonly>`;
-    //   notes.innerHTML = `<input type="text" value="${todo.notes}">`;
     edit.innerHTML = "Edit";
     deleteButton.innerHTML = "Delete";
 

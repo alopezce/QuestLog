@@ -17,7 +17,6 @@ input {
   border-left-style: hidden;
   border-bottom-style: hidden;
   outline: none;
-  /* font-size: 0.95rem; */
 }
 
 h2 {
@@ -104,7 +103,6 @@ h2 {
 
 #questsListTitle {
   height: 3rem;
-  /* margin-top: 1rem; */
   margin-left: 1rem;
   font-size: 1.5rem;
   text-align: left;
@@ -145,15 +143,11 @@ h2 {
   justify-content: space-around;
   width: 100%;
   font-size: 4rem;
-  /* margin-left: 1rem; */
 }
 
 .create-task .task {
   display: flex;
 }
-
-/* ----------------------- */
-/* NOTES MODAL */
 
 .create-task .notes {
   color: white;
